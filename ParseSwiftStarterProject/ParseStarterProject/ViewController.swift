@@ -21,7 +21,8 @@ class ViewController: UIViewController {
     var activityIndicator : UIActivityIndicatorView = UIActivityIndicatorView()
     
     
-    // generic display alert function
+    // MARK - generic display alert function
+    
     func displayAlert(title : String, message : String) {
      
         var emptyFieldsAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
