@@ -35,6 +35,12 @@ class ViewController: UIViewController {
     
     
     
+    // logging out unwind segue
+    @IBAction func unwindToMainMenu(segue: UIStoryboardSegue) {
+        username.text = ""
+        password.text = ""
+    }
+    
     
     @IBAction func signUp(sender: AnyObject) {
         
@@ -43,6 +49,7 @@ class ViewController: UIViewController {
         if(username.text == "" || password.text == "") {
             
             displayAlert("Error in Form", message: "Please enter a username and a password")
+            
         
         } else {
             
@@ -71,9 +78,10 @@ class ViewController: UIViewController {
                     self.activityIndicator.stopAnimating()
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
                
-                    if(error == nil) {
+                    if(error == nil && self.username.text != "") {
                         
                         // sign up succesful
+                        println("Wtf 1 is happening")
                         self.performSegueWithIdentifier("login", sender: self)
                         
                     
@@ -96,10 +104,11 @@ class ViewController: UIViewController {
                     self.activityIndicator.stopAnimating()
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     
-                    if(user != nil) {
+                    if(user != nil && self.username.text != "") {
                         //use found
                         println("logged in")
                         
+                        println("Wtf 2 is happening")
                         self.performSegueWithIdentifier("login", sender: self)
                         
                     } else {

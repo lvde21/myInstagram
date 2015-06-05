@@ -26,6 +26,7 @@ class TableViewController: UITableViewController {
             self.usernames.removeAll(keepCapacity: true)
             self.userids.removeAll(keepCapacity: true)
             self.positions.removeAll(keepCapacity: true)
+        
             
             performSegueWithIdentifier("logout", sender: self)
             

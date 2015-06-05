@@ -214,7 +214,7 @@
                                 <barButtonItem title="Log Out" id="C48-zS-ZP5">
                                     <connections>
                                         <action selector="logOutClicked:" destination="6V1-fN-dBR" id="Cv3-Gj-eS4"/>
-                                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="logout" id="zI3-op-ace"/>
+                                        <segue destination="jfc-eR-Rxa" kind="unwind" unwindAction="unwindToMainMenu:" id="8Tw-eO-TOL"/>
                                     </connections>
                                 </barButtonItem>
                             </items>
@@ -246,6 +246,7 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pye-Le-zzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jfc-eR-Rxa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1353.5" y="308.5"/>
         </scene>
