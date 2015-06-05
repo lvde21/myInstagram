@@ -17,6 +17,24 @@ class TableViewController: UITableViewController {
     var isFollowing = [Bool]()
     
     
+   
+    @IBAction func logOutClicked(sender: AnyObject) {
+        
+        PFUser.logOut()
+        if(PFUser.currentUser() == nil) {
+            
+            self.usernames.removeAll(keepCapacity: true)
+            self.userids.removeAll(keepCapacity: true)
+            self.positions.removeAll(keepCapacity: true)
+            
+            performSegueWithIdentifier("logout", sender: self)
+            
+        }
+        
+    
+    }
+    
+    
     // refresher
     var refresher : UIRefreshControl!
     
@@ -24,13 +42,17 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // implementing the refresher
-        refresher = UIRefreshControl()
-        refresher.attributedTitle = NSAttributedString(string: "Pull to Refresh")
-        refresher.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
-        self.tableView.addSubview(refresher)
+        if(PFUser.currentUser() != nil) {
         
-        refresh()
+            // implementing the refresher
+            refresher = UIRefreshControl()
+            refresher.attributedTitle = NSAttributedString(string: "Pull to Refresh")
+            refresher.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+            self.tableView.addSubview(refresher)
+        
+            refresh()
+            
+        }
         
         
         // populating users list

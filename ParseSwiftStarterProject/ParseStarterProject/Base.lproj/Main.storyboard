@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tyj-yf-QU3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -117,6 +118,7 @@
                             <constraint firstItem="Xpr-xo-AGa" firstAttribute="top" secondItem="MmX-3h-S6y" secondAttribute="bottom" constant="28" id="zbT-G7-IME"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="RQK-XE-hf2"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="loginButton" destination="W7w-KC-reh" id="4Gh-W9-zaY"/>
@@ -131,6 +133,72 @@
             </objects>
             <point key="canvasLocation" x="324.5" y="308.5"/>
         </scene>
+        <!--Your Feed-->
+        <scene sceneID="iIl-xd-0qC">
+            <objects>
+                <tableViewController title="Your Feed" id="GLO-hB-7xw" customClass="FeedTableViewController" customModule="ParseStarterProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="323" sectionHeaderHeight="22" sectionFooterHeight="22" id="dqo-q8-fj0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="323" id="2ud-Rm-rAl" customClass="cell" customModule="ParseStarterProject" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2ud-Rm-rAl" id="smb-fh-1k4">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIh-rl-WnK">
+                                            <rect key="frame" x="8" y="237" width="359" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.2950964687" green="0.45595103219999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="2gh-y7-vOy">
+                                            <rect key="frame" x="8" y="266" width="359" height="31"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijo-7J-fw8">
+                                            <rect key="frame" x="49" y="9" width="276" height="220"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="220" id="rdb-6S-Ohv"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="eIh-rl-WnK" firstAttribute="leading" secondItem="smb-fh-1k4" secondAttribute="leadingMargin" id="60k-ry-m94"/>
+                                        <constraint firstItem="ijo-7J-fw8" firstAttribute="leading" secondItem="smb-fh-1k4" secondAttribute="leadingMargin" constant="41" id="6l4-lJ-KzA"/>
+                                        <constraint firstItem="eIh-rl-WnK" firstAttribute="trailing" secondItem="smb-fh-1k4" secondAttribute="trailingMargin" id="E7m-LW-a7A"/>
+                                        <constraint firstItem="eIh-rl-WnK" firstAttribute="top" secondItem="ijo-7J-fw8" secondAttribute="bottom" constant="8" id="Hhm-wu-DZZ"/>
+                                        <constraint firstItem="ijo-7J-fw8" firstAttribute="top" secondItem="smb-fh-1k4" secondAttribute="topMargin" id="HuX-Xn-6tO"/>
+                                        <constraint firstItem="2gh-y7-vOy" firstAttribute="trailing" secondItem="smb-fh-1k4" secondAttribute="trailingMargin" id="OF1-Cc-NCY"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ijo-7J-fw8" secondAttribute="trailing" constant="42" id="UUE-sv-lYR" userLabel="Horizontal Space - (41) - Content View - Image View"/>
+                                        <constraint firstItem="2gh-y7-vOy" firstAttribute="leading" secondItem="smb-fh-1k4" secondAttribute="leadingMargin" id="acA-zZ-P6w"/>
+                                        <constraint firstAttribute="centerX" secondItem="2gh-y7-vOy" secondAttribute="centerX" id="gLM-Zf-kUk"/>
+                                        <constraint firstItem="2gh-y7-vOy" firstAttribute="top" secondItem="eIh-rl-WnK" secondAttribute="bottom" constant="8" id="lAh-BM-D4t"/>
+                                        <constraint firstAttribute="centerX" secondItem="eIh-rl-WnK" secondAttribute="centerX" id="sdY-nw-hIX"/>
+                                        <constraint firstAttribute="centerX" secondItem="ijo-7J-fw8" secondAttribute="centerX" id="yLg-Sb-cin"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="message" destination="2gh-y7-vOy" id="lbp-H8-DjJ"/>
+                                    <outlet property="postedImage" destination="ijo-7J-fw8" id="Nbh-jk-lVH"/>
+                                    <outlet property="username" destination="eIh-rl-WnK" id="Tp3-vO-oFZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GLO-hB-7xw" id="8wk-57-yDq"/>
+                            <outlet property="delegate" destination="GLO-hB-7xw" id="goQ-LP-AV6"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0a6-s3-Nid" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1353.5" y="-475.5"/>
+        </scene>
         <!--Users List-->
         <scene sceneID="0Gb-Js-Xdy">
             <objects>
@@ -139,6 +207,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="J8F-pq-foq">
+                            <rect key="frame" x="0.0" y="133" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem title="Log Out" id="C48-zS-ZP5">
+                                    <connections>
+                                        <action selector="logOutClicked:" destination="6V1-fN-dBR" id="Cv3-Gj-eS4"/>
+                                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="logout" id="zI3-op-ace"/>
+                                    </connections>
+                                </barButtonItem>
+                            </items>
+                        </toolbar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Ln7-e7-gJC">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -153,6 +233,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Users List" id="FVQ-Uq-1Cs">
+                        <barButtonItem key="leftBarButtonItem" title="News Feed" id="7Nr-vT-wGE">
+                            <connections>
+                                <segue destination="GLO-hB-7xw" kind="show" id="9Z2-UC-jhW"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Post" id="4zf-y9-LtS">
                             <connections>
                                 <segue destination="tyj-yf-QU3" kind="show" id="tnY-XD-1Ao"/>

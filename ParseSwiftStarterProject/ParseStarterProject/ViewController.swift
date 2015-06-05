@@ -89,9 +89,8 @@ class ViewController: UIViewController {
             
             } else {
                 
-                //PFUser.logInWithUsernameInBackground(<#username: String!#>, password: <#String!#>, block: <#PFUserResultBlock!##(PFUser!, NSError!) -> Void#>)
-                
                 //login instead of signup
+                
                 PFUser.logInWithUsernameInBackground(username.text, password: password.text, block: { (user, error) -> Void in
                     
                     self.activityIndicator.stopAnimating()
@@ -100,6 +99,9 @@ class ViewController: UIViewController {
                     if(user != nil) {
                         //use found
                         println("logged in")
+                        
+                        self.performSegueWithIdentifier("login", sender: self)
+                        
                     } else {
                         if let errorString = error!.userInfo?["error"] as? String {
                             
@@ -147,9 +149,9 @@ class ViewController: UIViewController {
     // allows segues to run from start screen
     override func viewDidAppear(animated: Bool) {
         
-        if(PFUser.currentUser() != nil) {
-            self.performSegueWithIdentifier("login", sender: self)
-        }
+//        if(PFUser.currentUser() != nil) {
+//            self.performSegueWithIdentifier("login", sender: self)
+//        }
         
     }
 
